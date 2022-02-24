@@ -1,0 +1,2 @@
+const String CURRENCYAPIKEY = "55c080e021c4256453aa";
+
