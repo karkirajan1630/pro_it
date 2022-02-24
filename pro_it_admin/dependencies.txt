@@ -1,0 +1,11 @@
+cached_network_image,
+cloud_firestore,
+connectivity,
+firebase_auth,
+firebase_core,
+firebase_storage,
+flutter_slidable,
+flutter_svg,
+get,
+image_picker,
+url_launcher
