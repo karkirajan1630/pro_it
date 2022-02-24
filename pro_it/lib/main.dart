@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Marketing proo",
+      title: "Pro IT",
       theme: ThemeData(
         primaryColor: Pallete.primaryCol,
         backgroundColor: Pallete.backgroundColor,
