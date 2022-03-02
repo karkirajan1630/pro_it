@@ -105,7 +105,7 @@ class AddProductView extends StatelessWidget {
                                 height: 10.0,
                               ),
                               Text(
-                                "Enter price in USD",
+                                "Enter price in NRS",
                                 style: TextStyle(
                                     fontSize: 15, fontWeight: FontWeight.w600),
                               ),

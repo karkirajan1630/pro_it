@@ -34,7 +34,7 @@ class SingleProduct extends StatelessWidget {
   SingleProduct({Key? key, required this.product}) : super(key: key);
 
   final SingleProductController controller = Get.put(SingleProductController());
-  final CurrencyController currController = Get.find<CurrencyController>();
+  // final CurrencyController currController = Get.find<CurrencyController>();
 
   double getPrice(String plan) {
     switch (plan) {
@@ -105,10 +105,8 @@ class SingleProduct extends StatelessWidget {
                     const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
                 child: Obx(
                   () {
-                    var symbol = currController.currSymbol.value;
-                    var price = currController.rate.value * getPrice(controller.plan.value);
                     return Text(
-                      "$symbol${price.toStringAsFixed(2)}",
+                      "Rs. ${getPrice(controller.plan.value).toStringAsFixed(2)}",
                       style: TextStyle(
                         color: Colors.red,
                         fontSize: 30.0,

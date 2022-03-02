@@ -5,6 +5,5 @@ class InitialBinding implements Bindings {
 @override
 void dependencies() {
     Get.put<FirebaseAuthController>(FirebaseAuthController());
-    Get.put<CurrencyController>(CurrencyController());
   }
 }

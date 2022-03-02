@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pro_it/config/currenciesJson.dart';
+// import 'package:pro_it/config/currenciesJson.dart';
 import 'package:pro_it/controllers/controllers.dart';
 import 'package:pro_it/widgets/widgets.dart';
 
@@ -16,17 +16,17 @@ class ServicesView extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        actions: [
-          GetX<CurrencyController>(builder: (controller) {
-            return CurrencyDropDown(
-              items: CurrenciesJson.currencies.keys.toList(),
-              value: controller.to.value,
-              onChange: (val) {
-                controller.changeCurrency(val);
-              },
-            );
-          }),
-        ],
+        // actions: [
+        //   GetX<CurrencyController>(builder: (controller) {
+        //     return CurrencyDropDown(
+        //       items: CurrenciesJson.currencies.keys.toList(),
+        //       value: controller.to.value,
+        //       onChange: (val) {
+        //         controller.changeCurrency(val);
+        //       },
+        //     );
+        //   }),
+        // ],
         bottom: _buildBottomBar(),
       ),
       body: Container(

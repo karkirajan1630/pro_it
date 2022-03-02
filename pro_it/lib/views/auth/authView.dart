@@ -50,7 +50,6 @@ class _AuthViewState extends State<AuthView> {
                   child: Image.asset(
                     "assets/images/logo.png",
                     fit: BoxFit.cover,
-                    color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 20.0),

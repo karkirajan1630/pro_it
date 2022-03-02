@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:pro_it/config/constants.dart';
 import 'package:pro_it/config/pallete.dart';
 import 'package:pro_it/controllers/controllers.dart';
 import 'package:pro_it/models/models.dart';
@@ -49,14 +48,6 @@ class MyDrawer extends StatelessWidget {
                     height: 5,
                   ),
                   DrawerListTile(
-                    svgImage: "assets/images/refund-policy.svg",
-                    title: "Refund Policy",
-                    route: "/refund-policy",
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  DrawerListTile(
                     svgImage: "assets/images/terms-of-service.svg",
                     title: "Terms of Service",
                     route: "/terms-of-service",
@@ -95,8 +86,8 @@ class MyDrawer extends StatelessWidget {
                   ),
                   Align(
                     alignment: Alignment.center,
-                    child: CachedNetworkImage(
-                      imageUrl: APPLOGO,
+                    child: Image.asset(
+                      "assets/images/logo.png",
                       width: 200,
                       height: 140,
                     ),

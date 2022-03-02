@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pro_it/config/pallete.dart';
-import 'package:pro_it/controllers/controllers.dart';
 import 'package:pro_it/models/models.dart';
 import 'package:pro_it/widgets/singleProduct.dart';
 
@@ -47,13 +46,14 @@ class StaggeredProductTile extends StatelessWidget {
               //Price
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: GetX<CurrencyController>(
-                  builder: (controller) {
-                    var price = controller.rate.value * product.price.basic;
-                    var currency = controller.currSymbol.value;
-                    return Text("from $currency${price.toStringAsFixed(2)}");
-                  },
-                ),
+                child: Text("from Rs ${product.price.basic.toStringAsFixed(2)}"),
+                // child: GetX<CurrencyController>(
+                //   builder: (controller) {
+                //     var price = controller.rate.value * product.price.basic;
+                //     var currency = controller.currSymbol.value;
+                //     return Text("from $currency${price.toStringAsFixed(2)}");
+                //   },
+                // ),
               ),
             ],
           ),

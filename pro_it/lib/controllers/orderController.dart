@@ -25,6 +25,7 @@ class OrderController extends GetxController {
   }
 
   Future<void> submitOrder(Order order) async {
+    
     await FirebaseApi.createOrder(order);
   }
 

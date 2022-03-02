@@ -37,7 +37,7 @@ class AuthView extends StatelessWidget {
                   child: Image.asset(
                         "assets/images/playstore.png",
                     fit: BoxFit.cover,
-                    color: Colors.white,
+                    // color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 20.0),

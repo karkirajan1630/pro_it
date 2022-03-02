@@ -127,7 +127,7 @@ class OrderListTile extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.only(left: 5, top: 5, bottom: 5),
                         child: Text(
-                          "Total Amount - \$${order.totalAmount.toStringAsFixed(2)}",
+                          "Total Amount - NRS${order.totalAmount.toStringAsFixed(2)}",
                         ),
                         alignment: Alignment.centerLeft,
                       ),
@@ -201,7 +201,7 @@ class OrderListTile extends StatelessWidget {
               ),
               title: Text("#${order.id}"),
               subtitle: Text(
-                  "Order by: ${order.userId} \nTotal amount is \$${order.totalAmount.toStringAsFixed(2)}"),
+                  "Order by: ${order.userId} \nTotal amount is NRS${order.totalAmount.toStringAsFixed(2)}"),
             ),
           );
         },

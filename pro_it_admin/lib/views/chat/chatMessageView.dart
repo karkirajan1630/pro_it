@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pro_it_admin/config/constants.dart';
 import 'package:pro_it_admin/controllers/controllers.dart';
 import 'package:pro_it_admin/models/models.dart';
 import 'package:pro_it_admin/widgets/userCircle.dart';
@@ -80,7 +81,7 @@ class ChatMessageView extends GetView<ChatMessageController> {
                   itemCount: controller.chatMessageList.length,
                   itemBuilder: (BuildContext context, int index) {
                     ChatMessage chatMessage = controller.chatMessageList[index];
-                    if (chatMessage.senderId == "marketingpro.london")
+                    if (chatMessage.senderId == AdminUsername)
                       return _buildMessageRow(chatMessage, current: true);
                     return _buildMessageRow(chatMessage, current: false);
                   },

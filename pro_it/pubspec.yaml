@@ -46,6 +46,7 @@ dependencies:
   http: ^0.13.4
   url_launcher: ^6.0.20
   video_player: ^2.2.18
+  khalti_flutter: ^2.0.2
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to

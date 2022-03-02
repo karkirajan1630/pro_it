@@ -13,4 +13,5 @@ get,
 google_sign_in,
 http,
 url_launcher,
-video_player
+video_player,
+khalti_flutter

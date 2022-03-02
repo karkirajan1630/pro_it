@@ -69,16 +69,10 @@ class CartItemTile extends StatelessWidget {
                         SizedBox(
                           width: 5,
                         ),
-                        GetX<CurrencyController>(
-                          builder: (controller) {
-                            var price = controller.rate.value * cartItem.price;
-                            var currency = controller.currSymbol.value;
-                            return Text(
-                              '$currency.${price.toStringAsFixed(2)}',
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w300),
-                            );
-                          },
+                        Text(
+                          'Rs. ${cartItem.price.toStringAsFixed(2)}',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w300),
                         )
                       ],
                     ),
@@ -88,19 +82,14 @@ class CartItemTile extends StatelessWidget {
                         SizedBox(
                           width: 5,
                         ),
-                        GetX<CurrencyController>(builder: (controller) {
-                          var price = controller.rate.value *
-                              (cartItem.price * cartItem.quantity);
-                          var currency = controller.currSymbol.value;
-                          return Text(
-                            '$currency.${price.toStringAsFixed(2)}',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.orange,
-                            ),
-                          );
-                        }),
+                        Text(
+                          'Rs. ${(cartItem.price * cartItem.quantity).toStringAsFixed(2)}',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.orange,
+                          ),
+                        )
                       ],
                     ),
                     Row(

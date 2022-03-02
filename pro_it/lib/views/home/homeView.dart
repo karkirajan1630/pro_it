@@ -34,7 +34,7 @@ class HomeView extends GetView<HomeController> {
             flexibleSpace: FlexibleSpaceBar(
               background: Introvideo(),
               title: Text(
-                "Marketing Proo",
+                "Pro IT",
                 style: TextStyle(color: Colors.white),
               ),
             ),

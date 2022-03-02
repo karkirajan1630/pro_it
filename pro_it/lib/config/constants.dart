@@ -12,3 +12,6 @@ const String SERVICES = "https://firebasestorage.googleapis.com/v0/b/marketing-p
 const String APPLOGO = "https://firebasestorage.googleapis.com/v0/b/marketing-pro-38c11.appspot.com/o/assets_images%2Fmarketing_pro_02.jpg?alt=media&token=196fa0fd-26c2-48f8-afd1-4d658fc6b1bd";
 
 const String CIRCULARAPPLOGO = "https://firebasestorage.googleapis.com/v0/b/marketing-pro-38c11.appspot.com/o/assets_images%2Fmarketing_pro_03.jpg?alt=media&token=8c02895d-fb20-40bb-8f9b-2b0108ebf5e6";
+
+const AppAdminEmail = "proit7788@gmail.com";
+const AppAdminUsername = "proit7788";

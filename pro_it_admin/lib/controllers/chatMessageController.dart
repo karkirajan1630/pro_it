@@ -1,6 +1,7 @@
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pro_it_admin/config/constants.dart';
 import 'package:pro_it_admin/controllers/controllers.dart';
 import 'package:pro_it_admin/models/models.dart';
 import 'package:pro_it_admin/services/firebaseApi.dart';
@@ -49,7 +50,7 @@ class ChatMessageController extends GetxController {
       }
       ChatMessage chatMessage = ChatMessage(
         message: message.value.text,
-        senderId: "marketingpro.london",
+        senderId: AdminUsername,
         receiverId: username.value,
         updateDate: DateTime.now(),
       );

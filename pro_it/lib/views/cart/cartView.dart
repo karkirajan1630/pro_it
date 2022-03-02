@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:khalti_flutter/khalti_flutter.dart';
 import 'package:pro_it/controllers/controllers.dart';
 import 'package:pro_it/models/models.dart';
 import 'package:pro_it/utilities/utls.dart';
@@ -42,15 +45,15 @@ class CartView extends StatelessWidget {
                 price: controller.totalPrice,
                 onCheckout: () async {
                   try {
-                    if(controller.cartItemList.length == 0){
-                      throw Exception("Your cart is empty. Add some for checkout");
+                    if (controller.cartItemList.length == 0) {
+                      throw Exception(
+                          "Your cart is empty. Add some for checkout");
                     }
                     ConnectivityResult connectivity =
                         await Connectivity().checkConnectivity();
                     if (connectivity == ConnectivityResult.none) {
                       throw Exception("You are not connected to the internet");
                     }
-                    
 
                     Order order = Order(
                       userId: Utils.getUsername(
@@ -69,14 +72,34 @@ class CartView extends StatelessWidget {
                       }).toList(),
                       orderDate: DateTime.now(),
                     );
-                    await Get.find<OrderController>()
-                        .submitOrder(order)
-                        .then((value) {
-                      controller.deleteCart();
-                      Utils.showSnackBar("Success", "Your order is placed successfully");
-                    });
+                    final payConfig = PaymentConfig(
+                      amount: order.totalAmount.toInt() * 100,
+                      productIdentity: order.orderedItems[0].productId,
+                      productName: order.orderedItems[0].name,
+                    );
+                    KhaltiScope.of(context).pay(
+                        config: payConfig,
+                        preferences: [
+                          PaymentPreference.khalti,
+                        ],
+                        onSuccess: (success) async {
+                          Get.snackbar("Success", "Payment succeded");
+                          await Get.find<OrderController>()
+                              .submitOrder(order)
+                              .then((value) {
+                            controller.deleteCart();
+                            Utils.showSnackBar(
+                                "Success", "Your order is placed successfully");
+                          });
+                        },
+                        onFailure: (failure) {
+                          log(failure.toString());
+                          Get.snackbar("Failed", "Payment failed");
+                        },
+                       );
                   } catch (e) {
-                    Utils.showSnackBar("Sorry!!!", "${Utils.getExceptionMessage(e.toString())}");
+                    Utils.showSnackBar("Sorry!!!",
+                        "${Utils.getExceptionMessage(e.toString())}");
                   }
                 },
               );

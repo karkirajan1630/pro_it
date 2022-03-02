@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pro_it/config/constants.dart';
@@ -17,12 +16,19 @@ class ChatMessageView extends GetView<ChatMessageController> {
       appBar: AppBar(
         title: Row(
           children: [
-            CircleAvatar(
-              backgroundImage: CachedNetworkImageProvider(CIRCULARAPPLOGO),
+            ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+              child: Image.asset(
+                "assets/images/logo.png",
+                height: 40,
+                width: 40,
+              ),
             ),
-            SizedBox(width: 10,),
+            SizedBox(
+              width: 10,
+            ),
             Text(
-              "Marketing Proo",
+              "Pro IT",
               overflow: TextOverflow.ellipsis,
             ),
           ],
@@ -41,7 +47,7 @@ class ChatMessageView extends GetView<ChatMessageController> {
                 itemCount: controller.chatMessageList.length,
                 itemBuilder: (BuildContext context, int index) {
                   ChatMessage chatMessage = controller.chatMessageList[index];
-                  if (chatMessage.senderId != "marketingpro.london")
+                  if (chatMessage.senderId != AppAdminUsername)
                     return _buildMessageRow(chatMessage, current: true);
                   return _buildMessageRow(chatMessage, current: false);
                 },
@@ -93,11 +99,13 @@ class ChatMessageView extends GetView<ChatMessageController> {
         children: <Widget>[
           SizedBox(width: current ? 30.0 : 20.0),
           if (!current) ...[
-            CircleAvatar(
-              backgroundImage: CachedNetworkImageProvider(
-                CIRCULARAPPLOGO,
+            ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+              child: Image.asset(
+                "assets/images/logo.png",
+                height: 40,
+                width: 40,
               ),
-              radius: 18.0,
             ),
             const SizedBox(width: 5.0),
           ],
