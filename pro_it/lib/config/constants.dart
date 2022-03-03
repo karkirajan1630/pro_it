@@ -1,17 +1,12 @@
 
-const String INTROVIDEO =
-    "https://firebasestorage.googleapis.com/v0/b/marketing-proo.appspot.com/o/video%2Fintro_video.mp4?alt=media&token=e8e61604-d077-4f1a-ab4b-6fff0c8f0aa2";
 
-const String INTROVIDEOCDN = "https://cdn.shopify.com/s/files/1/0559/9736/6449/files/Dropshipping_Ad_intro.mp4?v=1617482549";
-const String SLIDE1 = "https://firebasestorage.googleapis.com/v0/b/marketing-pro-38c11.appspot.com/o/slides%2Fslide1.1.jpg?alt=media&token=d3973128-6ff4-4f6c-b690-8d52352b1d71";
-const String SLIDE2 = "https://firebasestorage.googleapis.com/v0/b/marketing-pro-38c11.appspot.com/o/slides%2Fslide2.jpg?alt=media&token=90dd4540-311a-4d6f-9e77-404d68085dcf";
-const String SLIDE3 = "https://firebasestorage.googleapis.com/v0/b/marketing-pro-38c11.appspot.com/o/slides%2Fslide3.jpg?alt=media&token=2a8678b4-5176-42c5-b70b-2652456cc8e4";
+const String SLIDE1 = "https://firebasestorage.googleapis.com/v0/b/pro-it-7788.appspot.com/o/slides%2Fslide1.jpg?alt=media&token=31ba8bb9-95f6-4be5-bc34-ea9169be5cff";
+const String SLIDE2 = "https://firebasestorage.googleapis.com/v0/b/pro-it-7788.appspot.com/o/slides%2Fslide2.jpg?alt=media&token=346dfe8f-8fb3-4048-bc82-13332916e884";
+const String SLIDE3 = "https://firebasestorage.googleapis.com/v0/b/pro-it-7788.appspot.com/o/slides%2Fslide3.jpg?alt=media&token=0a9d1f0b-cda9-4fac-950b-bf30eef1c12f";
 
-const String SERVICES = "https://firebasestorage.googleapis.com/v0/b/marketing-pro-38c11.appspot.com/o/assets_images%2Fservices.png?alt=media&token=5d121c97-88aa-440d-8004-f45483d26591";
+const String SERVICES = "https://firebasestorage.googleapis.com/v0/b/pro-it-7788.appspot.com/o/assets_images%2Fservices.png?alt=media&token=9bbb0850-0080-4bf5-a106-ba4a0ca5fe7e";
 
-const String APPLOGO = "https://firebasestorage.googleapis.com/v0/b/marketing-pro-38c11.appspot.com/o/assets_images%2Fmarketing_pro_02.jpg?alt=media&token=196fa0fd-26c2-48f8-afd1-4d658fc6b1bd";
+const String CIRCULARAPPLOGO = "https://firebasestorage.googleapis.com/v0/b/pro-it-7788.appspot.com/o/assets_images%2Flogo.png?alt=media&token=b5cdd657-488c-4afa-8110-c9319e27a59e";
 
-const String CIRCULARAPPLOGO = "https://firebasestorage.googleapis.com/v0/b/marketing-pro-38c11.appspot.com/o/assets_images%2Fmarketing_pro_03.jpg?alt=media&token=8c02895d-fb20-40bb-8f9b-2b0108ebf5e6";
-
-const AppAdminEmail = "proit7788@gmail.com";
-const AppAdminUsername = "proit7788";
+const AppAdminEmail = "proitadmin@gmail.com";
+const AppAdminUsername = "proitadmin";
