@@ -9,14 +9,11 @@ import 'package:pro_it/services/firebaseApi.dart';
 import 'package:pro_it/utilities/utls.dart';
 
 class SingleProductController extends GetxController {
-  var plan = "Basic".obs;
+ 
 
-  Rx<List<String>> items = Rx<List<String>>(["Basic", "Standard", "Premium"]);
+  
 
-  void setPlan(String val) {
-    plan.value = val;
-    update();
-  }
+  
   @override
   void onInit() {
     Product product = Get.arguments;
@@ -34,20 +31,6 @@ class SingleProduct extends StatelessWidget {
   SingleProduct({Key? key, required this.product}) : super(key: key);
 
   final SingleProductController controller = Get.put(SingleProductController());
-  // final CurrencyController currController = Get.find<CurrencyController>();
-
-  double getPrice(String plan) {
-    switch (plan) {
-      case "Basic":
-        return product.price.basic;
-      case "Standard":
-        return product.price.standard;
-      case "Premium":
-        return product.price.premium;
-      default:
-        return product.price.basic;
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,17 +86,13 @@ class SingleProduct extends StatelessWidget {
               Padding(
                 padding:
                     const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
-                child: Obx(
-                  () {
-                    return Text(
-                      "Rs. ${getPrice(controller.plan.value).toStringAsFixed(2)}",
+                child: Text(
+                      "Rs. ${product.price.toStringAsFixed(2)}",
                       style: TextStyle(
                         color: Colors.red,
                         fontSize: 30.0,
                       ),
-                    );
-                  },
-                ),
+                    ),
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
@@ -130,52 +109,7 @@ class SingleProduct extends StatelessWidget {
                   style: TextStyle(color: Colors.grey.shade600),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Expanded(
-                      child: Text(
-                        "Package:",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: GetX<SingleProductController>(
-                        builder: (controller) {
-                          return Container(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: Pallete.primaryCol, width: 1),
-                                borderRadius: BorderRadius.circular(15)),
-                            child: DropdownButton<String>(
-                              isExpanded: true,
-                              value: controller.plan.value,
-                              underline: SizedBox(),
-                              onChanged: (val) {
-                                controller.setPlan(val!);
-                              },
-                              items: controller.items.value
-                                  .map<DropdownMenuItem<String>>(
-                                      (String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                );
-                              }).toList(),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              
               Container(
                 padding: const EdgeInsets.only(bottom: 15.0, top: 15),
                 child: Row(
@@ -193,9 +127,9 @@ class SingleProduct extends StatelessWidget {
                       onPressed: () async {
                         await Get.find<CartController>().addToCart(
                             product,
-                            getPrice(controller.plan.value),
+                            product.price,
                             1,
-                            controller.plan.value);
+                            );
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(

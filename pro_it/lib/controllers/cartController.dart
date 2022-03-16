@@ -41,7 +41,7 @@ class CartController extends GetxController {
   }
 
   Future<void> addToCart(Product product, double price,
-      [int quantity = 1, String plan = "Basic"]) async {
+      [int quantity = 1] ) async {
     if (!isInCart(product.id!)) {
       CartItem cartItem = CartItem(
           name: product.title,
@@ -50,7 +50,7 @@ class CartController extends GetxController {
           productId: product.id!,
           quantity: quantity,
           userId: username.value,
-          plan: plan);
+          );
       await FirebaseApi.createCartItem(username.value, cartItem);
       // Utils.showSnackBar("Added to cart", "");
     } else {
@@ -78,7 +78,6 @@ class CartController extends GetxController {
       price: cartItem.price,
       quantity: cartItem.quantity + 1,
       productId: cartItem.productId,
-      plan: cartItem.plan,
     );
     await FirebaseApi.updateCartItem(username.value, upCartItem);
   }
@@ -93,7 +92,6 @@ class CartController extends GetxController {
         price: cartItem.price,
         quantity: cartItem.quantity - 1,
         productId: cartItem.productId,
-        plan: cartItem.plan,
       );
       await FirebaseApi.updateCartItem(username.value, upCartItem);
     } else {

@@ -15,9 +15,8 @@ class EditProductController extends GetxController {
   var productId = "".obs;
   var title = TextEditingController().obs;
   var description = TextEditingController().obs;
-  var basicPrice = TextEditingController().obs;
-  var standardPrice = TextEditingController().obs;
-  var premiumPrice = TextEditingController().obs;
+  var price = TextEditingController().obs;
+  
 
   late firebase_storage.Reference ref;
 
@@ -38,9 +37,8 @@ class EditProductController extends GetxController {
     final Product? product = await FirebaseApi.getProductById(productId.value);
     title.value.text = product!.title;
     description.value.text = product.description;
-    basicPrice.value.text = product.price.basic.toString();
-    standardPrice.value.text = product.price.standard.toString();
-    premiumPrice.value.text = product.price.premium.toString();
+    price.value.text = product.price.toString();
+    
     imageUrl.value = product.imageUrl;
     super.onInit();
   }
@@ -109,11 +107,7 @@ class EditProductController extends GetxController {
             id: productId.value,
             title: title.value.text,
             imageUrl: imageUrl.value,
-            price: Price(
-              basic: double.parse(basicPrice.value.text),
-              standard: double.parse(standardPrice.value.text),
-              premium: double.parse(premiumPrice.value.text),
-            ),
+            price: double.parse(price.value.text),
             description: description.value.text,
           );
 
@@ -144,8 +138,6 @@ class EditProductController extends GetxController {
     description.value.text = "";
     imageUrl.value = "";
     pickedImages.value = [];
-    basicPrice.value.text = "";
-    standardPrice.value.text = "";
-    premiumPrice.value.text = "";
+    price.value.text = "";
   }
 }

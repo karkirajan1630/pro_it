@@ -114,10 +114,10 @@ class EditProductView extends GetView<EditProductController> {
                               TextFormField(
                                 validator: (val) {
                                   if (val!.isEmpty)
-                                    return "*Basic Price can't be empty.";
+                                    return "*Price can't be empty.";
                                   return null;
                                 },
-                                controller: controller.basicPrice.value,
+                                controller: controller.price.value,
                                 textInputAction: TextInputAction.next,
                                 keyboardType: TextInputType.numberWithOptions(
                                     decimal: true),
@@ -125,53 +125,9 @@ class EditProductView extends GetView<EditProductController> {
                                     border: OutlineInputBorder(
                                       borderSide: BorderSide(),
                                     ),
-                                    labelText: "Basic Price"),
+                                    labelText: "Price"),
                                 onFieldSubmitted: (val) {
-                                  controller.basicPrice.value.text = val;
-                                },
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              TextFormField(
-                                validator: (val) {
-                                  if (val!.isEmpty)
-                                    return "*Standard Price can't be empty.";
-                                  return null;
-                                },
-                                controller: controller.standardPrice.value,
-                                textInputAction: TextInputAction.next,
-                                keyboardType: TextInputType.numberWithOptions(
-                                    decimal: true),
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                      borderSide: BorderSide(),
-                                    ),
-                                    labelText: "Standard Price"),
-                                onFieldSubmitted: (val) {
-                                  controller.standardPrice.value.text = val;
-                                },
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              TextFormField(
-                                validator: (val) {
-                                  if (val!.isEmpty)
-                                    return "*Premium Price can't be empty.";
-                                  return null;
-                                },
-                                controller: controller.premiumPrice.value,
-                                textInputAction: TextInputAction.next,
-                                keyboardType: TextInputType.numberWithOptions(
-                                    decimal: true),
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                      borderSide: BorderSide(),
-                                    ),
-                                    labelText: "Premium Price"),
-                                onFieldSubmitted: (val) {
-                                  controller.premiumPrice.value.text = val;
+                                  controller.price.value.text = val;
                                 },
                               ),
                               SizedBox(

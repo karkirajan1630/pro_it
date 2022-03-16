@@ -46,14 +46,7 @@ class StaggeredProductTile extends StatelessWidget {
               //Price
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("from Rs ${product.price.basic.toStringAsFixed(2)}"),
-                // child: GetX<CurrencyController>(
-                //   builder: (controller) {
-                //     var price = controller.rate.value * product.price.basic;
-                //     var currency = controller.currSymbol.value;
-                //     return Text("from $currency${price.toStringAsFixed(2)}");
-                //   },
-                // ),
+                child: Text("Rs ${product.price.toStringAsFixed(2)}"),
               ),
             ],
           ),

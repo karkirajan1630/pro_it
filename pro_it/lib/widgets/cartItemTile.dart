@@ -93,12 +93,8 @@ class CartItemTile extends StatelessWidget {
                       ],
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
-                        Text(
-                          "${cartItem.plan}",
-                          style: TextStyle(color: Colors.orange),
-                        ),
-                        Spacer(),
                         Row(
                           children: <Widget>[
                             InkWell(

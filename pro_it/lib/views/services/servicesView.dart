@@ -16,17 +16,6 @@ class ServicesView extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        // actions: [
-        //   GetX<CurrencyController>(builder: (controller) {
-        //     return CurrencyDropDown(
-        //       items: CurrenciesJson.currencies.keys.toList(),
-        //       value: controller.to.value,
-        //       onChange: (val) {
-        //         controller.changeCurrency(val);
-        //       },
-        //     );
-        //   }),
-        // ],
         bottom: _buildBottomBar(),
       ),
       body: Container(
@@ -35,7 +24,6 @@ class ServicesView extends StatelessWidget {
             itemCount: productController.productList.length,
             itemBuilder: (context, i) {
               return StaggeredProductTile(
-                //key: Key(productController.productList[i].id!),
                 product: productController.productList[i],
               );
             },

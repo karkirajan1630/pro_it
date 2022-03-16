@@ -16,9 +16,8 @@ class ProductController extends GetxController {
 
   var title = TextEditingController().obs;
   var description = TextEditingController().obs;
-  var basicPrice = TextEditingController().obs;
-  var standardPrice = TextEditingController().obs;
-  var premiumPrice = TextEditingController().obs;
+  var price = TextEditingController().obs;
+  
 
   late firebase_storage.Reference ref;
 
@@ -94,22 +93,10 @@ class ProductController extends GetxController {
           Product product = Product(
             title: title.value.text,
             imageUrl: imageUrl.value,
-            price: Price(
-              basic: double.parse(basicPrice.value.text),
-              standard: double.parse(standardPrice.value.text),
-              premium: double.parse(premiumPrice.value.text),
-            ),
+            price: double.parse(price.value.text),
             description: description.value.text,
           );
-          // productItemDb.createItem(product).then(
-          //   (value) {
-          //     Get.snackbar(
-          //       "Successfull!!",
-          //       "Your Product is Created",
-          //       snackPosition: SnackPosition.BOTTOM,
-          //     );
-          //   },
-          // );
+         
 
           FirebaseApi.createProduct(product).then(
             (value) {
@@ -139,8 +126,6 @@ class ProductController extends GetxController {
     imageUrl.value = "";
     pickedImages.value = [];
     progressVal.value = 0.0;
-    basicPrice.value.text = "";
-    standardPrice.value.text = "";
-    premiumPrice.value.text = "";
+    price.value.text = "";
   }
 }

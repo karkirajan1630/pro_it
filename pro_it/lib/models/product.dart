@@ -40,45 +40,23 @@ class Product extends DatabaseItem {
   final String? id;
   final String title;
   final String imageUrl;
-  final Price price;
+  final double price;
   final String description;
 
   factory Product.fromMap(String id, Map<String, dynamic> json) => Product(
         id: id,
         title: json["title"],
         imageUrl: json["imageUrl"],
-        price: Price.fromMap(json["price"]),
+        price: json["price"].toDouble(),
         description: json["description"],
       );
 
   Map<String, dynamic> toMap() => {
         "title": title,
         "imageUrl": imageUrl,
-        "price": price.toMap(),
+        "price": price,
         "description": description,
       };
 }
 
-class Price {
-  Price({
-    required this.basic,
-    required this.standard,
-    required this.premium,
-  });
 
-  final double basic;
-  final double standard;
-  final double premium;
-
-  factory Price.fromMap(Map<String, dynamic> json) => Price(
-        basic: json["basic"].toDouble(),
-        standard: json["standard"].toDouble(),
-        premium: json["premium"].toDouble(),
-      );
-
-  Map<String, dynamic> toMap() => {
-        "basic": basic,
-        "standard": standard,
-        "premium": premium,
-      };
-}

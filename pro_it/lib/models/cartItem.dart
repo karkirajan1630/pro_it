@@ -8,7 +8,6 @@ class CartItem extends DatabaseItem {
   final int quantity;
   final String userId;
   final String productId;
-  final String plan;
 
   CartItem({
     required this.name,
@@ -18,7 +17,6 @@ class CartItem extends DatabaseItem {
     required this.price,
     required this.quantity,
     required this.productId,
-    required this.plan,
   }) : super(id);
 
   CartItem.fromMap(String id, Map<String, dynamic> data)
@@ -28,7 +26,6 @@ class CartItem extends DatabaseItem {
         imageUrl = data['imageUrl'],
         quantity = data['quantity'],
         productId = data['productId'],
-        plan = data['plan'],
         price = data['price'],
         super(id);
 
@@ -38,7 +35,6 @@ class CartItem extends DatabaseItem {
         "imageUrl": imageUrl,
         "quantity": quantity,
         "productId": productId,
-        "plan": plan,
         "price": price,
       };
 }
